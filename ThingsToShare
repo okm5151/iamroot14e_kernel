@@ -1,0 +1,12 @@
+## elf, bin 차이
+bin 파일은 실제 메모리에 올라가 실행 가능한 상태, 여기서 실행 가능 하다는 것은 cpu가 해당 주소에 있는 코드를 읽어서 수행이 가능하다는 의미 code, 변수들이 메모리에 loading 되어있다.
+elf 파일은 code 가 있고, stack(local variable), heap 영역에 대한 헤더 정보만 있는 경우, ./ 같은 loader 가 헤더 정보를 보고 loading 될 때에, memory의 위치를 잡는다.
+
+##system map file
+결과 파일(bin)에 포함되는 함수들, 실제 code가 메모리에 올라가 있는 주소에 대한 정보 
+function pointer
+Symbol에 대한 정보 http://www.dirac.org/linux/system.map/
+    - "b" The symbol is in the uninitialized data section (known as BSS).
+    - "A" The symbol's value is absolute, and will not be changed by further linking.
+    - "d" The symbol is in the initialized data section.
+디버깅에 활용
